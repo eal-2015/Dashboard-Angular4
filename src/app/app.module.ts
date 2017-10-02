@@ -24,6 +24,8 @@ import { HttpModule } from '@angular/http';
 
 //danymic components
 import { LoadingModule } from 'ngx-loading';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth/auth.service';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { LoadingModule } from 'ngx-loading';
     FooterComponent,
     WidgetareaComponent,
     ControlsidebarComponent,
-    WidgetHostDirective
+    WidgetHostDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { LoadingModule } from 'ngx-loading';
     FormsModule,
     LoadingModule
   ],
-  providers: [WidgetLibraryService, GooglechartsService, UserService, DashboardcontrollerService, GoogleMapsContainerService, LoadingModule],
+  providers: [WidgetLibraryService, GooglechartsService, UserService, DashboardcontrollerService, GoogleMapsContainerService, LoadingModule, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

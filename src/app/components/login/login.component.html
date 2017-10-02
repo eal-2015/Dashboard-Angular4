@@ -1,0 +1,20 @@
+<div id="login">
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form">
+                <div>
+                    <input #user class="login-input" type="text" placeholder="Brugernavn" (keyup.enter)="login(user.value, password.value)" (blur)="validateUsername(user.value, $event)" data-toggle="popover" data-placement="right" title="Fejl i e-mail" data-content="Forkert e-mail format" autofocus/>    
+                </div>
+                <div>
+                    <input #password class="login-input" type="password" placeholder="Adgangkode" (keyup.enter)="login(user.value, password.value)" (blur)="validatePassword(user.value, $event)" data-toggle="popover" data-placement="right" title="Fejl i adgangkode" data-content="Forkert adgangskode<br/>Adgangskode skal indeholde mindst 6 bogstaver" autocomplete="off"/>
+                </div>
+                <div>
+                    <input #remember id="remember" type="checkbox" placeholder="Husk mig"/>
+                    <label for="remember">Husk min login</label>
+                </div>
+                <button type="button" (click)="login(user.value, password.value)">Login</button>
+                <p class="message">Mangler en bruger? <a href="#">Opret en bruger</a></p>
+            </form>
+        </div>
+    </div>
+</div>

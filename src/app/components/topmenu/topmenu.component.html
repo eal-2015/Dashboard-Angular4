@@ -28,7 +28,7 @@
                                     <!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../../../assets/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                                            <img src="assets/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                                         </div>
                                         <h4>
                                             Data Warehouse
@@ -40,7 +40,7 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../../../assets/img/user1-128x128.jpg" class="img-circle" alt="user image" />
+                                            <img src="assets/img/user1-128x128.jpg" class="img-circle" alt="user image" />
                                         </div>
                                         <h4>
                                             Frontend
@@ -52,7 +52,7 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../../../assets/img/user3-128x128.jpg" class="img-circle" alt="user image" />
+                                            <img src="assets/img/user3-128x128.jpg" class="img-circle" alt="user image" />
                                         </div>
                                         <h4>
                                             Backend
@@ -64,7 +64,7 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../../../assets/img/user6-128x128.jpg" class="img-circle" alt="user image" />
+                                            <img src="assets/img/user6-128x128.jpg" class="img-circle" alt="user image" />
                                         </div>
                                         <h4>
                                             Backend
@@ -113,16 +113,16 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="../../../assets/img/user2-160x160.jpg" class="user-image" alt="User Image" />
-                        <span class="hidden-xs">{{firstname}} {{lastname}}</span>
+                        <img src="assets/img/user2-160x160.jpg" class="user-image" alt="User Image" />
+                        <span class="hidden-xs">{{identity.firstName}} {{identity.lastName}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="../../../assets/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                            <img src="assets/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                             <p>
-                                {{department}}
-                                <small>{{occupation}}</small>
+                                {{identity.department}}
+                                <small>{{identity.occupation}}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -131,7 +131,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profil</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Log ud</a>
+                                <a (click)="logout()" href="#" class="btn btn-default btn-flat">Log ud</a>
                             </div>
                         </li>
                     </ul>

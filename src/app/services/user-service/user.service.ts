@@ -2,33 +2,45 @@ import { Injectable } from '@angular/core';
 import { User } from "../helperClasses/user";
 import { Configuration } from "../helperClasses/configuration";
 import { Dashboard, DashboardType } from "../helperClasses/dashboard";
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class UserService {
   private user: User;
 
-  constructor() {
-    //No login implemented yet.
-    //Test login. Remove this when login is implemented.
-    this.getUserData();
+  constructor(private auth: AuthService) {
+    
   }
 
-  public getUserData() {
-    //if authenticated
-    //Get user from server
-    //Store in user variable
+  public getUserData(): User{
+    // //if authenticated
+    // //Get user from server
+    // //Store in user variable
 
-    //Test - Last parameter is null, so a configuration will be generated
-    if(this.user == undefined){
-      let d = new Dashboard(1, "Standard1Col", 1, [10,12]);
-      let d2 = new Dashboard(2, "Content2col", 4, [10,12]);
+    // //Test - Last parameter is null, so a configuration will be generated
+    // if(this.user == undefined){
+    //   let d = new Dashboard(1, "Standard1Col", 1, [2]);
+    //   let d2 = new Dashboard(2, "Content2col", 4, [2]);
+    //   let das = [];
+    //   das.push(d);
+    //   das.push(d2);
+    //   let config = new Configuration(das);
+    //   this.user = new User("Mikkel", "Andersen", "IT & Digitalisering", "Praktikant", config); 
+    // }
+    // return this.user;
+
+    var u = this.auth.getUser();
+    if(u && !u.configuration){
+      let d = new Dashboard(1, "Standard1Col", 1, [2]);
+      let d2 = new Dashboard(2, "Content2col", 4, [2]);
       let das = [];
       das.push(d);
       das.push(d2);
       let config = new Configuration(das);
-      this.user = new User("Mikkel", "Andersen", "IT & Digitalisering", "Praktikant", config); 
+      u.configuration = config;
     }
-    return this.user;
+
+    return u;
   }
 
   public removeDashboard(dashboardId: number) {

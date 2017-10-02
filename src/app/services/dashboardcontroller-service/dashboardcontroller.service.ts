@@ -22,7 +22,7 @@ export class DashboardcontrollerService {
 
   //loads in the dashboard configuration from user service
   private getDashboardConfiguration() {
-    this.dashboards = this.userService.getUserData().configuration.dashboards;
+    //this.dashboards = this.userService.getUserData().configuration.dashboards;
     //If there is no dashboards - the active will be undefined
     if (this.activeDashboard == undefined) {
       //start with the 1st one as active dashboard if there is any
